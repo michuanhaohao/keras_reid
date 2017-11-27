@@ -8,7 +8,6 @@ Created on Thu Jun  8 10:37:16 2017
 
 import cv2
 import numpy as np
-import nori2 as nori
 from tqdm import tqdm
 
 def augment(img, rng, img_shape,do_training):
