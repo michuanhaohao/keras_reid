@@ -14,8 +14,10 @@ http://pan.baidu.com/s/1bo3gwaV
 You should add some functions according to the comments
 
 # Citation
+```
 @article{Xiao2017Margin,
   title={Margin Sample Mining Loss: A Deep Learning Based Method for Person Re-identification},
   author={Xiao, Qiqi and Luo, Hao and Zhang, Chi},
   year={2017},
 }
+```
