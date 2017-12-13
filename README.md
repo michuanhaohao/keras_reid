@@ -15,9 +15,10 @@ You should add some functions according to the comments
 
 # Citation
 ```
-@article{Xiao2017Margin,
+@article{xiao2017margin,
   title={Margin Sample Mining Loss: A Deep Learning Based Method for Person Re-identification},
   author={Xiao, Qiqi and Luo, Hao and Zhang, Chi},
-  year={2017},
+  journal={arXiv preprint arXiv:1710.00478},
+  year={2017}
 }
 ```
