@@ -113,8 +113,8 @@ def triplet_hard_loss(y_true, y_pred):
     feat1 = K.tile(K.expand_dims(y_pred,axis = 0),[feat_num,1,1])
     feat2 = K.tile(K.expand_dims(y_pred,axis = 1),[1,feat_num,1])
     delta = feat1 - feat2
-    dis_mat = K.sum(K.square(delta),axis = 2)
-    dis_mat = K.sqrt(dis_mat) + 1e-8 #1e-8 is not necessary
+    dis_mat = K.sum(K.square(delta),axis = 2) + K.epsilon() # Avoid gradients becoming NAN
+    dis_mat = K.sqrt(dis_mat)
     positive = dis_mat[0:SN,0:SN]
     negetive = dis_mat[0:SN,SN:]
     for i in range(1,PN):
@@ -138,8 +138,8 @@ def msml_loss(y_true, y_pred):
     feat1 = K.tile(K.expand_dims(y_pred,axis = 0),[feat_num,1,1])
     feat2 = K.tile(K.expand_dims(y_pred,axis = 1),[1,feat_num,1])
     delta = feat1 - feat2
-    dis_mat = K.sum(K.square(delta),axis = 2)
-    dis_mat = K.sqrt(dis_mat) + 1e-8 #1e-8 is not necessary
+    dis_mat = K.sum(K.square(delta),axis = 2) + K.epsilon() # Avoid gradients becoming NAN
+    dis_mat = K.sqrt(dis_mat)
     positive = dis_mat[0:SN,0:SN]
     negetive = dis_mat[0:SN,SN:]
     for i in range(1,PN):
