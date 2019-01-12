@@ -147,7 +147,8 @@ def msml_loss(y_true, y_pred):
         if i != PN-1:
             negs = tf.concat([dis_mat[i*SN:(i+1)*SN,0:i*SN],dis_mat[i*SN:(i+1)*SN, (i+1)*SN:]],axis = 1)
         else:
-            negs = tf.concat(dis_mat[i*SN:(i+1)*SN, 0:i*SN],axis = 0)
+            negs = dis_mat[i*SN:(i+1)*SN, 0:i*SN]
+        #   negs = tf.concat(dis_mat[i*SN:(i+1)*SN, 0:i*SN],axis = 0)
         negetive = tf.concat([negetive,negs],axis = 0)
     positive = K.max(positive)
     negetive = K.min(negetive) 
